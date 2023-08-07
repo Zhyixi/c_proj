@@ -1,0 +1,19 @@
+# 有何不同?
+### g++ -o main main.cpp -ID:/mingw64/include -LD:/mingw64/bin -lcurl
+### g++ -o main main.cpp -ID:/mingw64/include -LD:/mingw64/lib -lcurl
+
+這是使用 g++ 編譯器的命令，我們來逐步解釋每個部分的意義：
+
+g++: 這是 GCC (GNU Compiler Collection) 工具集中的 C++ 編譯器，用於編譯 C++ 程式碼。
+
+-o myapp: 這個選項指定編譯後的可執行檔的名稱。在這裡，它設定為 myapp，意味著編譯後的執行檔將命名為 myapp.exe。
+
+main.cpp: 這是你的 CPP 檔案的檔名，即你想要編譯的源程式碼。
+
+-ID:/mingw64/include: 這個選項告訴編譯器在哪裡尋找頭檔。在這裡，它指定 MinGW-w64 的 include 資料夾的路徑，以便能夠找到和包含你程式碼中使用的頭檔。
+
+-LD:/mingw64/bin: 這個選項告訴連結器在哪裡尋找庫檔。在這裡，它指定 MinGW-w64 的 bin 資料夾的路徑，以便能夠找到並連結所需的庫檔。
+
+-lcurl: 這個選項告訴連結器要連結名為 libcurl.a 或 libcurl.dll（取決於是否使用靜態或動態庫）的 CURL 庫。這使得你的程式碼可以使用 CURL 的功能。
+
+總結來說，這個命令是將你的 CPP 程式碼編譯成一個可執行檔，並連結了 CURL 库，讓你的程式碼可以使用 CURL 功能。請確保路徑、檔案名稱等相符，根據你的安裝和配置進行調整。
